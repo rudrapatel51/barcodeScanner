@@ -48,7 +48,7 @@ const Scanner = () => {
 
     const sendToBackend = async (barcode) => {
         try {
-            const response = await axios.post(`api/scan`, 
+            const response = await axios.post(`/scan`, 
                 { barcode },
                 {
                     headers: {
@@ -62,6 +62,7 @@ const Scanner = () => {
             window.location.reload();
         } catch (error) {
             console.error('Error storing barcode:', error);
+            alert(`Error adding  the user: ${barcode}`);
             if (error.response && error.response.status === 409) {
                 alert(`User already registered with Barcode: ${barcode}`);
             } else {
