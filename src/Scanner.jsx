@@ -48,7 +48,7 @@ const Scanner = () => {
 
     const sendToBackend = async (barcode) => {
         try {
-            const response = await axios.post(`/scan`, 
+            const response = await axios.post(`https://not.webyourvyavsay.com/scan`, 
                 { barcode },
                 {
                     headers: {
